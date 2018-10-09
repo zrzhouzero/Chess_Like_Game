@@ -430,6 +430,7 @@ class Board extends GridPane {
                                     }
                                 }
                             } else {
+                                /* split mode on and the selected piece is able to be split */
                                 if (isBishopSplit(previousPosition, board[fi][fj].getCoordinate())) {
                                     Bishop bishop = new Bishop(this.currentTurn);
                                     this.board[fi][fj].setPiece(bishop);
