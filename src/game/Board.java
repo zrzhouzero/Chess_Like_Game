@@ -369,7 +369,7 @@ class Board extends GridPane {
                             } else if(this.board[fi][fj].getPiece().getPieceType() == Piece.PieceType.KNIGHT_ROOK) {
                                 this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #00FF00");
                             } else {
-                                this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #EE3A15");
+                                this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #BB3A15");
                             }
                             k++;
                         }
