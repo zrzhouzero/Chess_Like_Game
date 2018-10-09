@@ -299,7 +299,6 @@ class Board extends GridPane {
                         } else {
                             num += 2;
                         }
-
                     }
                 }
             }
