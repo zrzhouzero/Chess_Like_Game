@@ -292,7 +292,14 @@ class Board extends GridPane {
             for (int j = 0; j < 6; j++) {
                 if (this.board[i][j].getPiece() != null) {
                     if (this.board[i][j].getPiece().getPlayer() == player) {
-                        num++;
+                        if (this.board[i][j].getPiece().getPieceType() == Piece.PieceType.ROOK || this.board[i][j].getPiece().getPieceType() == Piece.PieceType.KNIGHT || this.board[i][j].getPiece().getPieceType() == Piece.PieceType.BISHOP) {
+                            num++;
+                        } else if (this.board[i][j].getPiece().getPieceType() == Piece.PieceType.QUEEN) {
+                            num += 3;
+                        } else {
+                            num += 2;
+                        }
+
                     }
                 }
             }
