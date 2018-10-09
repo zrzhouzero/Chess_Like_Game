@@ -85,11 +85,11 @@ public class GameWindow extends Pane {
                 new TipWindow("Error", "Both players must login before start");
                 return;
             }
-            leftBorder.getChildren().clear();
-            leftBorder.getChildren().addAll(this.gameBoard.getPlayerPad1(), this.gameBoard.getPlayerPad2());
             if (firstStart.get()) {
                 chessBorder.getChildren().clear();
                 chessBorder.getChildren().add(this.gameBoard);
+                leftBorder.getChildren().clear();
+                leftBorder.getChildren().addAll(this.gameBoard.getPlayerPad1(), this.gameBoard.getPlayerPad2());
                 this.gameBoard.initialiseBoard();
                 this.gameBoard.setClickAction();
                 restartButton.setText("Restart");
@@ -100,6 +100,8 @@ public class GameWindow extends Pane {
                 confirmBox.getConfirmButton().setOnAction(e2 -> {
                     chessBorder.getChildren().clear();
                     chessBorder.getChildren().add(this.gameBoard);
+                    leftBorder.getChildren().clear();
+                    leftBorder.getChildren().addAll(this.gameBoard.getPlayerPad1(), this.gameBoard.getPlayerPad2());
                     this.gameBoard.initialiseBoard();
                     this.gameBoard.setClickAction();
                     this.resetPlayerPad();

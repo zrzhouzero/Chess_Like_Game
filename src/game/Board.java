@@ -369,7 +369,7 @@ class Board extends GridPane {
                             } else if(this.board[fi][fj].getPiece().getPieceType() == Piece.PieceType.KNIGHT_ROOK) {
                                 this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #00FF00");
                             } else {
-                                this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #DC143C");
+                                this.board[availableCell.get(k).getCoordinate().getLeft()][availableCell.get(k).getCoordinate().getRight()].setStyle("-fx-background-color: #EE3A15");
                             }
                             k++;
                         }
@@ -430,6 +430,7 @@ class Board extends GridPane {
                                     }
                                 }
                             } else {
+                                /* split mode on and the selected piece is able to be split */
                                 if (isBishopSplit(previousPosition, board[fi][fj].getCoordinate())) {
                                     Bishop bishop = new Bishop(this.currentTurn);
                                     this.board[fi][fj].setPiece(bishop);
