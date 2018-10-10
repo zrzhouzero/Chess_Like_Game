@@ -157,7 +157,7 @@ class Board extends GridPane {
         this.withdrawTargetPiece = new ArrayList<>();
         this.withdrawTargetIcon = new ArrayList<>();
 
-        this.maxMoveInputField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
+        this.maxMoveInputField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: rgb(146, 217, 220); -fx-font-family: Monaco");
         this.maxMoveInputField.setAlignment(Pos.CENTER);
         this.maxMoveInputField.setMaxSize(100, 40);
         this.maxMoveInputField.setMinSize(100, 40);
@@ -174,7 +174,7 @@ class Board extends GridPane {
             this.setMaxMove(20);
         }
 
-        this.maxMoveShowField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
+        this.maxMoveShowField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: rgb(146, 217, 220); -fx-font-family: Monaco");
         this.maxMoveShowField.setAlignment(Pos.CENTER);
         this.maxMoveShowField.setMaxSize(100, 40);
         this.maxMoveShowField.setMinSize(100, 40);
@@ -184,7 +184,7 @@ class Board extends GridPane {
         this.totalMove = 0;
         this.totalMoveLabel.setAlignment(Pos.CENTER);
         this.totalMoveLabel.setText("Total Move: " + String.valueOf(this.totalMove));
-        this.totalMoveLabel.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
+        this.totalMoveLabel.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: rgb(146, 217, 220); -fx-font-family: Monaco");
         this.totalMoveLabel.setMinSize(100, 40);
         this.totalMoveLabel.setMaxSize(100, 40);
 
@@ -195,6 +195,10 @@ class Board extends GridPane {
         this.withdrawButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
         this.withdrawButton.setMinSize(100, 40);
         this.withdrawButton.setMaxSize(100, 40);
+        this.withdrawButton.setOnMouseEntered(t -> this.withdrawButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        this.withdrawButton.setOnMouseExited(t -> this.withdrawButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        this.withdrawButton.setOnMousePressed(t -> this.withdrawButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #659597; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        this.withdrawButton.setOnMouseReleased(t -> this.withdrawButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
         this.withdrawButton.setOnAction(e -> this.withdraw());
 
         Piece blackRook = new Rook(true);
@@ -299,7 +303,6 @@ class Board extends GridPane {
                         } else {
                             num += 2;
                         }
-
                     }
                 }
             }

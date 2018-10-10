@@ -134,6 +134,10 @@ public class GameWindow extends Pane {
         instructionButton.setMaxSize(100, 40);
         instructionButton.setMinSize(100, 40);
         instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
+        instructionButton.setOnMouseEntered(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMouseExited(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMousePressed(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #659597; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMouseReleased(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
         instructionButton.setOnAction(e -> {
             InstructionPage instructionPage = new InstructionPage();
             instructionPage.show();
