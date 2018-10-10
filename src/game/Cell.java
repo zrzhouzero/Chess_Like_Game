@@ -23,11 +23,6 @@ public class Cell extends Button {
         }
     }
 
-    public Cell(int x, int y, Piece piece) {
-        this(x, y);
-        this.piece = piece;
-    }
-
     public Piece getPiece() {
         return this.piece;
     }

@@ -8,9 +8,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class InstructionPage extends Stage {
+class InstructionPage extends Stage {
 
-    public InstructionPage() {
+    InstructionPage() {
 
         VBox vBox = new VBox();
         vBox.setAlignment(Pos.TOP_CENTER);

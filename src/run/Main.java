@@ -9,7 +9,7 @@ import utilities.ExitBox;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
 
         GameWindow gameWindow = new GameWindow();
         primaryStage.setTitle("Chess-Like Game");
