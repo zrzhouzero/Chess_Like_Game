@@ -38,11 +38,11 @@ class LoginPage extends VBox {
         label.setMaxSize(150, 40);
         label.setMinSize(150, 40);
 
-        this.userName.setStyle("-fx-font-family: Monaco; -fx-font-size: 10; -fx-text-fill: #1B2B6D; -fx-background-color: #F19EC2; -fx-background-radius: 30");
+        this.userName.setStyle("-fx-font-family: Monaco; -fx-font-size: 10; -fx-text-fill: #1B2B6D; -fx-background-color: #F19EC2; -fx-background-radius: 30; -fx-prompt-text-fill: #FFFFFF");
         this.userName.setMaxSize(150, 40);
         this.userName.setMinSize(150, 40);
 
-        this.password.setStyle("-fx-font-family: Monaco; -fx-font-size: 10; -fx-text-fill: #1B2B6D; -fx-background-color: #F19EC2; -fx-background-radius: 30");
+        this.password.setStyle("-fx-font-family: Monaco; -fx-font-size: 10; -fx-text-fill: #1B2B6D; -fx-background-color: #F19EC2; -fx-background-radius: 30; -fx-prompt-text-fill: #FFFFFF");
         this.password.setMaxSize(150, 40);
         this.password.setMinSize(150, 40);
 

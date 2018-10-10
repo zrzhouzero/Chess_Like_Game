@@ -1,6 +1,7 @@
 package game;
 
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -56,9 +57,9 @@ public class GameWindow extends Pane {
 
         VBox leftBorder = new VBox();
         leftBorder.setAlignment(Pos.CENTER);
-        leftBorder.setSpacing(10);
         leftBorder.setMinSize(180, 580);
         leftBorder.setMaxSize(180, 580);
+        leftBorder.setSpacing(10);
         leftBorder.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 10; -fx-border-width: 3");
 
         VBox rightBorder = new VBox();
@@ -67,6 +68,29 @@ public class GameWindow extends Pane {
         rightBorder.setMinSize(180, 580);
         rightBorder.setMaxSize(180, 580);
         rightBorder.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 10; -fx-border-width: 3");
+
+        VBox leftUpperPlayerBox = new VBox();
+        VBox leftMiddleControlBox = new VBox();
+        VBox leftLowerPlayerBox = new VBox();
+
+        leftUpperPlayerBox.setMaxSize(160, 170);
+        leftMiddleControlBox.setMaxSize(160, 200);
+        leftLowerPlayerBox.setMaxSize(160, 170);
+        leftUpperPlayerBox.setMinSize(160, 170);
+        leftMiddleControlBox.setMinSize(160, 200);
+        leftLowerPlayerBox.setMinSize(160, 170);
+
+        leftUpperPlayerBox.setAlignment(Pos.CENTER);
+        leftMiddleControlBox.setAlignment(Pos.CENTER);
+        leftLowerPlayerBox.setAlignment(Pos.CENTER);
+
+        leftUpperPlayerBox.setSpacing(10);
+        leftMiddleControlBox.setSpacing(10);
+        leftLowerPlayerBox.setSpacing(10);
+
+        leftUpperPlayerBox.setPadding(new Insets(10, 10, 10, 10));
+        leftMiddleControlBox.setPadding(new Insets(10, 10, 10, 10));
+        leftLowerPlayerBox.setPadding(new Insets(10, 10, 10, 10));
 
         this.gameBoard.initialiseBoard();
 
@@ -88,8 +112,10 @@ public class GameWindow extends Pane {
             if (firstStart.get()) {
                 chessBorder.getChildren().clear();
                 chessBorder.getChildren().add(this.gameBoard);
-                leftBorder.getChildren().clear();
-                leftBorder.getChildren().addAll(this.gameBoard.getPlayerPad1(), this.gameBoard.getPlayerPad2());
+                leftUpperPlayerBox.getChildren().clear();
+                leftLowerPlayerBox.getChildren().clear();
+                leftUpperPlayerBox.getChildren().add(this.gameBoard.getPlayerPad1());
+                leftLowerPlayerBox.getChildren().add(this.gameBoard.getPlayerPad2());
                 this.gameBoard.initialiseBoard();
                 this.gameBoard.setClickAction();
                 restartButton.setText("Restart");
@@ -100,8 +126,10 @@ public class GameWindow extends Pane {
                 confirmBox.getConfirmButton().setOnAction(e2 -> {
                     chessBorder.getChildren().clear();
                     chessBorder.getChildren().add(this.gameBoard);
-                    leftBorder.getChildren().clear();
-                    leftBorder.getChildren().addAll(this.gameBoard.getPlayerPad1(), this.gameBoard.getPlayerPad2());
+                    leftUpperPlayerBox.getChildren().clear();
+                    leftLowerPlayerBox.getChildren().clear();
+                    leftUpperPlayerBox.getChildren().add(this.gameBoard.getPlayerPad1());
+                    leftLowerPlayerBox.getChildren().add(this.gameBoard.getPlayerPad2());
                     this.gameBoard.initialiseBoard();
                     this.gameBoard.setClickAction();
                     this.resetPlayerPad();
@@ -131,13 +159,13 @@ public class GameWindow extends Pane {
 
         Button instructionButton = new Button("Instructions");
         instructionButton.setAlignment(Pos.CENTER);
-        instructionButton.setMaxSize(100, 40);
-        instructionButton.setMinSize(100, 40);
+        instructionButton.setMaxSize(100, 30);
+        instructionButton.setMinSize(100, 30);
         instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
-        instructionButton.setOnMouseEntered(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
-        instructionButton.setOnMouseExited(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
-        instructionButton.setOnMousePressed(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #659597; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
-        instructionButton.setOnMouseReleased(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 9; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMouseEntered(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMouseExited(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMousePressed(t -> instructionButton.setStyle("-fx-border-color: #5F8C8E; -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #659597; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
+        instructionButton.setOnMouseReleased(t -> instructionButton.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: #D8EFFA; -fx-background-radius: 5; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco"));
         instructionButton.setOnAction(e -> {
             InstructionPage instructionPage = new InstructionPage();
             instructionPage.show();
@@ -251,7 +279,8 @@ public class GameWindow extends Pane {
             ConfirmBox confirmBox = new ConfirmBox("Log Out!");
             confirmBox.getConfirmButton().setOnAction(e2 -> {
                 this.gameBoard.removePlayers();
-                leftBorder.getChildren().clear();
+                leftUpperPlayerBox.getChildren().clear();
+                leftLowerPlayerBox.getChildren().clear();
                 chessBorder.getChildren().clear();
                 chessBorder.getChildren().addAll(loginPage1, loginPage2);
                 loginPage1.logOutSuccessful();
@@ -264,15 +293,13 @@ public class GameWindow extends Pane {
         chessBorder.setSpacing(20);
         chessBorder.getChildren().addAll(loginPage1, loginPage2);
 
+        leftMiddleControlBox.getChildren().addAll(gameBoard.getMaxMoveInputField(), restartButton, instructionButton, logOut);
+        leftBorder.getChildren().addAll(leftUpperPlayerBox, leftMiddleControlBox, leftLowerPlayerBox);
         rightBorder.getChildren().add(gameBoard.getOnSplitLabel());
         rightBorder.getChildren().add(onSplitButton);
         rightBorder.getChildren().add(gameBoard.getMaxMoveShowField());
-        rightBorder.getChildren().add(gameBoard.getMaxMoveInputField());
         rightBorder.getChildren().add(gameBoard.getTotalMoveLabel());
         rightBorder.getChildren().add(gameBoard.getWithdrawButton());
-        rightBorder.getChildren().add(restartButton);
-        rightBorder.getChildren().add(instructionButton);
-        rightBorder.getChildren().add(logOut);
 
         chessZone.getChildren().add(chessBorder);
         leftZone.getChildren().add(leftBorder);

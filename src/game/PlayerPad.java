@@ -16,10 +16,10 @@ class PlayerPad extends VBox {
 
         this.player = player;
 
-        this.setMaxSize(180, 260);
-        this.setMinSize(180, 260);
+        this.setMaxSize(180, 190);
+        this.setMinSize(180, 190);
         this.setAlignment(Pos.CENTER);
-        this.setPadding(new Insets(15, 15, 15, 15));
+        this.setPadding(new Insets(20, 10, 10, 20));
         this.setSpacing(10);
         this.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-background-color: #D8EFFA; -fx-background-radius: 5");
 
@@ -29,10 +29,10 @@ class PlayerPad extends VBox {
         this.totalPointLabel.setText(String.valueOf(this.player.getTotalPoint()));
         this.currentTurn.setText("Your Turn");
 
-        nameLabel.setPrefHeight(50);
-        this.currentPointLabel.setPrefHeight(50);
-        this.totalPointLabel.setPrefHeight(50);
-        this.currentTurn.setPrefHeight(50);
+        nameLabel.setPrefHeight(30);
+        this.currentPointLabel.setPrefHeight(30);
+        this.totalPointLabel.setPrefHeight(30);
+        this.currentTurn.setPrefHeight(30);
 
         nameLabel.setStyle("-fx-opacity: 0.9; -fx-font-size: 15;-fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
         this.currentPointLabel.setStyle("-fx-opacity: 0.9; -fx-font-size: 15;-fx-text-fill: #6A8C8F; -fx-font-family: Monaco");

@@ -157,7 +157,7 @@ class Board extends GridPane {
         this.withdrawTargetPiece = new ArrayList<>();
         this.withdrawTargetIcon = new ArrayList<>();
 
-        this.maxMoveInputField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: rgb(146, 217, 220); -fx-font-family: Monaco");
+        this.maxMoveInputField.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 11; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: #508C80; -fx-font-family: Monaco; -fx-prompt-text-fill: #286A5E");
         this.maxMoveInputField.setAlignment(Pos.CENTER);
         this.maxMoveInputField.setMaxSize(100, 40);
         this.maxMoveInputField.setMinSize(100, 40);
@@ -320,6 +320,8 @@ class Board extends GridPane {
             // Calculate the points of the two players, and create a new window showing who is the winner (or a draw game).
             this.removeAllChessAction();
             this.resetBoard();
+            this.canWithdraw = false;
+            this.withdrawButton.setText("No Withdraw");
 
             VBox winWindow = new VBox();
             winWindow.setAlignment(Pos.CENTER);
@@ -502,6 +504,8 @@ class Board extends GridPane {
                             if (this.getNumOfPieces(!this.currentTurn) == 0) {
                                 this.removeAllChessAction();
                                 this.resetBoard();
+                                this.canWithdraw = false;
+                                this.withdrawButton.setText("No Withdraw");
 
                                 VBox winWindow = new VBox();
                                 winWindow.setAlignment(Pos.CENTER);
