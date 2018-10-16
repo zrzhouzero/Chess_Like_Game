@@ -383,7 +383,7 @@ public class GameWindow extends Pane {
             label.setTextAlignment(TextAlignment.CENTER);
             label.setAlignment(Pos.CENTER);
             label.setStyle("-fx-opacity: 0.9; -fx-font-size: 11; -fx-text-fill: #6A8C8F; -fx-font-family: Monaco");
-            label.setText("Restart?");
+            label.setText("Confirm?");
             VBox vBox = new VBox();
             vBox.setAlignment(Pos.CENTER);
             vBox.setPrefSize(300, 100);
