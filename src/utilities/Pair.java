@@ -14,6 +14,10 @@ public class Pair {
     public int getRight() { return this.R; }
 
 /*
+    public boolean isSame(Pair pair) {
+        return this.L == pair.getLeft() && this.R == pair.getRight();
+    }
+
     public static boolean isSame(Pair pair1, Pair pair2) {
         return (pair1.getLeft() == pair2.getLeft()) && (pair1.getRight() == pair2.getRight());
     }

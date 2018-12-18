@@ -15,7 +15,7 @@ public class Rook extends Piece {
     }
 
     @Override
-    public ArrayList<Cell> checkValidMove(Cell board[][], int x, int y) {
+    public ArrayList<Cell> checkValidMove(Cell[][] board, int x, int y) {
 
         this.resetAvailableCell();
         this.addValidRookMove(board, x, y);

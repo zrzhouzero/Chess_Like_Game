@@ -66,7 +66,7 @@ public abstract class Piece {
         return this.player;
     }
 
-    public abstract ArrayList<Cell> checkValidMove(Cell board[][], int x, int y);
+    public abstract ArrayList<Cell> checkValidMove(Cell[][] board, int x, int y);
 
     void resetAvailableCell() {
         this.availableCell.clear();
@@ -74,7 +74,7 @@ public abstract class Piece {
 
     public abstract Image getImage();
 
-    void addValidRookMove(Cell board[][], int x, int y) {
+    void addValidRookMove(Cell[][] board, int x, int y) {
         int rTempX, rTempY;
         rTempX = x + 1;
         rTempY = y;
@@ -138,7 +138,7 @@ public abstract class Piece {
         }
     }
 
-    void addValidKnightMove(Cell board[][], int x, int y) {
+    void addValidKnightMove(Cell[][] board, int x, int y) {
         int[] kTempX = {x - 2, x - 2, x - 1, x - 1, x + 1, x + 1, x + 2, x + 2};
         int[] kTempY = {y + 1, y - 1, y - 2, y + 2, y - 2, y + 2, y + 1, y - 1};
         int i = 0;
@@ -157,7 +157,7 @@ public abstract class Piece {
         }
     }
 
-    void addValidBishopMove(Cell board[][], int x, int y) {
+    void addValidBishopMove(Cell[][] board, int x, int y) {
         int bTempX, bTempY;
         bTempX = x + 1;
         bTempY = y + 1;

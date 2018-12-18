@@ -333,7 +333,7 @@ public class GameWindow extends Pane {
             return;
         }
         for (String s : convertList) {
-            String convertLine[] = s.split(":");
+            String[] convertLine = s.split(":");
             this.playerList.add(new Player(convertLine[0], convertLine[1], Integer.parseInt(convertLine[2])));
         }
 
