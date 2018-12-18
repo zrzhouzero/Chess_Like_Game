@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 class Board extends GridPane {
 
-    private Cell board[][] = new Cell[6][6];
+    private Cell[][] board = new Cell[6][6];
     private Piece selectedPiece;
     private ArrayList<Cell> currentAvailableMove;
     private Pair previousPosition;
@@ -83,7 +83,7 @@ class Board extends GridPane {
 
     void turnOnSplit() {
         this.onSplit = true;
-        this.onSplitLabel.setText(String.valueOf("Split: ON"));
+        this.onSplitLabel.setText("Split: ON");
         this.onSplitLabel.setAlignment(Pos.CENTER);
         this.onSplitLabel.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 12; -fx-background-color: #FFFFC8; -fx-background-radius: 5; -fx-text-fill: #CFB53B; -fx-font-family: Monaco");
         this.onSplitLabel.setMinSize(100, 40);
@@ -178,12 +178,12 @@ class Board extends GridPane {
         this.maxMoveShowField.setAlignment(Pos.CENTER);
         this.maxMoveShowField.setMaxSize(100, 40);
         this.maxMoveShowField.setMinSize(100, 40);
-        this.maxMoveShowField.setText("Max Move: " + String.valueOf(this.maxMove));
+        this.maxMoveShowField.setText("Max Move: " + this.maxMove);
         this.maxMoveShowField.setEditable(false);
 
         this.totalMove = 0;
         this.totalMoveLabel.setAlignment(Pos.CENTER);
-        this.totalMoveLabel.setText("Total Move: " + String.valueOf(this.totalMove));
+        this.totalMoveLabel.setText("Total Move: " + this.totalMove);
         this.totalMoveLabel.setStyle("-fx-border-color: rgb(146, 217, 220); -fx-border-radius: 5; -fx-border-width: 2; -fx-opacity: 0.9; -fx-font-size: 10; -fx-background-color: transparent; -fx-background-radius: 5; -fx-text-fill: rgb(146, 217, 220); -fx-font-family: Monaco");
         this.totalMoveLabel.setMinSize(100, 40);
         this.totalMoveLabel.setMaxSize(100, 40);
@@ -497,7 +497,7 @@ class Board extends GridPane {
                                 }
                             }
                             this.totalMove++;
-                            this.totalMoveLabel.setText("Total Move: " + String.valueOf(this.totalMove));
+                            this.totalMoveLabel.setText("Total Move: " + this.totalMove);
                             this.selectedPiece = null;
                             this.previousIcon = null;
                             this.previousPosition = null;
@@ -592,7 +592,7 @@ class Board extends GridPane {
         this.board[this.withdrawTargetPosition.get(lastIndex).getLeft()][this.withdrawTargetPosition.get(lastIndex).getRight()].setPiece(this.withdrawTargetPiece.get(lastIndex));
         this.board[this.withdrawTargetPosition.get(lastIndex).getLeft()][this.withdrawTargetPosition.get(lastIndex).getRight()].setIcon(this.withdrawTargetIcon.get(lastIndex));
         this.totalMove--;
-        this.totalMoveLabel.setText("Total Move: " + String.valueOf(this.totalMove));
+        this.totalMoveLabel.setText("Total Move: " + this.totalMove);
         if (this.board[this.withdrawTargetPosition.get(lastIndex).getLeft()][this.withdrawTargetPosition.get(lastIndex).getRight()].getPiece() != null) {
             if (this.board[this.withdrawTargetPosition.get(lastIndex).getLeft()][this.withdrawTargetPosition.get(lastIndex).getRight()].getPiece().getPlayer() == this.currentTurn) {
                 int point;
